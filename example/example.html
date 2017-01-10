@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../../../ala/src/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="../src/litmessage.js"></script>
+	<style type="text/css">
+		.litMessage.litMsg-small {
+		    width: 280px;
+		    height: 60px;
+		}
+		.litMessage.litMsgmiddle {
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		}
+		.litMessage {
+		    display: none;
+		    position: fixed;
+		    z-index: 999;
+		    margin: auto;
+		    padding: 0;
+		    -webkit-border-radius: 5px;
+		    -moz-border-radius: 5px;
+		    -ms-border-radius: 5px;
+		    -o-border-radius: 5px;
+		    border-radius: 5px;
+		    font-size: 14px;
+		    color: #fff;
+		    background: rgba(0, 0, 0, 0.7);
+		}
+		.litMessage .msg-content {
+		    padding: 10px 20px;
+		}
+		.litMessage .msg-content .msg-type {
+		    float: left;
+		    width: 40px;
+		    height: 40px;
+		    background-repeat: no-repeat;
+		}
+		.litMessage .msg-content .msg-text {
+		    padding: 0 0 0 10px;
+		    height: 2.6em;
+		    overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+<div id="foucusArea" style="width: 200px; height: 200px; background: #eee;"></div>
+<script type="text/javascript">
+	var litmessage = new litMessage();
+	litmessage.init({
+		autohide:true,
+		position: 'mouse',
+		size:'small'
+	})
+	$('#foucusArea').on('mouseover', function(e){
+		litmessage.show('yes,it is.','', e);
+	})
+	$('#foucusArea').on('mouseout', function(){
+		litmessage.hide();
+	})
+</script>
+</body>
+</html>
